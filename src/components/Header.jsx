@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
 import Slider from "./Slider";
+import "../styles/header.css";
 
 const Header = () => {
 	return (

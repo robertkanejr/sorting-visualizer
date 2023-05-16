@@ -1,13 +1,16 @@
 import React from "react";
+import "../styles/dropdown.css";
 
 const Dropdown = () => {
 	const algos = ["Bubble", "Selection", "Insertion", "Merge", "Quick", "Heap"];
 	return (
-		<select name="" id="">
-			{algos.map((algo) => (
-				<option>{algo} Sort</option>
-			))}
-		</select>
+		<div className="dropdown">
+			<select>
+				{algos.map((algo) => (
+					<option value={algo}>{algo} Sort</option>
+				))}
+			</select>
+		</div>
 	);
 };
 
