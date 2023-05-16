@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/dropdown.css";
 
-const Dropdown = () => {
+const Dropdown = ({ onChange }) => {
 	const algos = ["Bubble", "Selection", "Insertion", "Merge", "Quick", "Heap"];
 	return (
 		<div className="dropdown">
-			<select>
+			<select onChange={onChange}>
 				{algos.map((algo) => (
 					<option value={algo}>{algo} Sort</option>
 				))}

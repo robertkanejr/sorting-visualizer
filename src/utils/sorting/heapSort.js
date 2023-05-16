@@ -1,6 +1,6 @@
 import swap from "../swap";
 
-export default function heapSort(arr) {
+export const heapSort = (arr) => {
 	const length = arr.length;
 	let lastParent = Math.floor(length / 2 - 1),
 		lastChild = length - 1;
@@ -12,7 +12,7 @@ export default function heapSort(arr) {
 		heapify(arr, 0, lastChild--);
 	}
 	return arr;
-}
+};
 
 const heapify = (arr, root, heapSize) => {
 	let larger = root;

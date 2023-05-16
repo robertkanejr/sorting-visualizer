@@ -1,10 +1,10 @@
 import swap from "../swap";
 
-export default function quickSort(arr) {
+export const quickSort = (arr) => {
 	if (!arr) return [];
 	qsHelper(arr, 0, arr.length - 1);
 	return arr;
-}
+};
 
 const qsHelper = (arr, start, end) => {
 	if (start >= end) return;

@@ -1,6 +1,6 @@
 import swap from "../swap";
 
-export default function selectionSort(arr) {
+export const selectionSort = (arr) => {
 	for (let i = 0; i < arr.length; i++) {
 		let min = i;
 		for (let j = i + 1; j < arr.length; j++) {
@@ -9,4 +9,4 @@ export default function selectionSort(arr) {
 		if (min !== i) swap(arr, i, min);
 	}
 	return arr;
-}
+};

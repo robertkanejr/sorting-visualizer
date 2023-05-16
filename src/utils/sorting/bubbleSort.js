@@ -1,6 +1,6 @@
 import swap from "../swap";
 
-export default function bubbleSort(arr) {
+export const bubbleSort = (arr) => {
 	let checked;
 	do {
 		checked = false;
@@ -12,4 +12,4 @@ export default function bubbleSort(arr) {
 		}
 	} while (checked);
 	return arr;
-}
+};

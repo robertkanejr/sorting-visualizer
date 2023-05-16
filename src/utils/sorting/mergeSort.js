@@ -1,9 +1,9 @@
-export default function mergeSort(arr) {
+export const mergeSort = (arr) => {
 	const mid = Math.floor(arr.length / 2),
 		leftHalf = arr.slice(0, mid),
 		rightHalf = arr.slice(mid);
 	return arr.length <= 1 ? arr : merge(mergeSort(leftHalf), mergeSort(rightHalf));
-}
+};
 
 const merge = (left, right) => {
 	let lp = 0,

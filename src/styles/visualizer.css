@@ -1,0 +1,13 @@
+.sortingBars {
+	position: absolute;
+	top: 25%;
+	left: 5%;
+}
+
+.bars {
+	width: 10px;
+	background-color: #ff5050;
+	margin-left: 4px;
+	display: inline-block;
+	border-radius: 10px;
+}
