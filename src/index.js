@@ -4,15 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ArrayProvider } from "./contexts/ArrayContext";
+import { SpeedProvider } from "./contexts/SpeedContext";
 import { AlgorithmProvider } from "./contexts/AlgorithmContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<ArrayProvider>
-			<AlgorithmProvider>
-				<App />
-			</AlgorithmProvider>
+			<SpeedProvider>
+				<AlgorithmProvider>
+					<App />
+				</AlgorithmProvider>
+			</SpeedProvider>
 		</ArrayProvider>
 	</React.StrictMode>
 );

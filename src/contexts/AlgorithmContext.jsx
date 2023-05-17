@@ -5,6 +5,8 @@ import { insertionSort } from "../utils/sorting/insertionSort";
 import { mergeSort } from "../utils/sorting/mergeSort";
 import { quickSort } from "../utils/sorting/quickSort";
 import { heapSort } from "../utils/sorting/heapSort";
+import { useSpeed } from "./SpeedContext";
+import { useArray } from "./ArrayContext";
 
 const AlgorithmContext = createContext();
 
@@ -12,30 +14,37 @@ export const useAlgorithm = () => useContext(AlgorithmContext);
 
 export const AlgorithmProvider = ({ children }) => {
 	const [algorithm, setAlgorithm] = useState("bubbleSort");
+	const [sorted, setSorted] = useState(false);
+	const { speed, sleep, finishedAnimation } = useSpeed();
+	const { array, setArray } = useArray();
 
-	const handleSorting = (arr) => {
+	let currentArr = array;
+
+	const handleSorting = (currentArr) => {
 		switch (algorithm) {
 			case "bubbleSort":
-				bubbleSort(arr);
+				bubbleSort(currentArr);
 				break;
 			case "selectionSort":
-				selectionSort(arr);
+				selectionSort(currentArr);
 				break;
 			case "insertionSort":
-				insertionSort(arr);
+				insertionSort(currentArr);
 				break;
 			case "mergeSort":
-				mergeSort(arr);
+				mergeSort(currentArr);
 				break;
 			case "quickSort":
-				quickSort(arr);
+				quickSort(currentArr);
 				break;
 			case "heapSort":
-				heapSort(arr);
+				heapSort(currentArr);
 				break;
 			default:
 				break;
 		}
+		setSorted(true);
+		if (sorted) finishedAnimation();
 	};
 
 	return (

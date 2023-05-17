@@ -7,7 +7,9 @@ const Dropdown = ({ onChange }) => {
 		<div className="dropdown">
 			<select onChange={onChange}>
 				{algos.map((algo) => (
-					<option value={algo}>{algo} Sort</option>
+					<option value={algo} key={algo}>
+						{algo} Sort
+					</option>
 				))}
 			</select>
 		</div>
