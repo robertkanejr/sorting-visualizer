@@ -1,31 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { randomizeArray } from "../../utils/createArray";
 
 const initialState = {
 	array: [],
+	arrayLength: 30,
 };
 
 export const arraySlice = createSlice({
-	name: "randomArr",
+	name: "array",
 	initialState,
 	reducers: {
-		randomizeArray: (state) => {
-			const arraySize = 100;
-			for (let i = 0; i < state.array.length; i++) {
-				let bar = document.getElementById(i).style;
-				bar.backgroundColor = "#ff7f50";
-			}
-			let arr = [];
-			for (let i = 0; i < arraySize; i++) arr.push(randomVals(20, 400));
-			// setArray(arr);
+		setArray: (state, action) => {
+			state.array = action.payload;
 		},
-
-		randomVals: (min, max) => {
-			let randomVal = Math.floor(Math.random() * (max - min + 1) + min);
-			return randomVal;
+		setArrayLength: (state, action) => {
+			state.arrayLength = action.payload;
+			state.array = randomizeArray(state.arrayLength);
+		},
+		resetArray: (state) => {
+			state.array = randomizeArray(state.arrayLength);
 		},
 	},
 });
 
-export const { randomizeArray, randomVals } = arraySlice.actions;
-
+export const { setArray, setArrayLength, resetArray } = arraySlice.actions;
 export default arraySlice.reducer;

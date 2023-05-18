@@ -3,12 +3,11 @@ const randomVals = (min, max) => {
 	return randomVal;
 };
 
-export const randomizeArray = (arrayLength) => {
-	// for (let i = 0; i < arrayLength; i++) {
-	//   let bar = document.getElementById(i).style;
-	//   bar.backgroundColor = "#ff7f50";
-	// }
+export const randomizeArray = (array, arrayLength) => {
+	for (let i = 0; i < array.length; i++) {
+		let bar = document.getElementById(i).style;
+		bar.backgroundColor = "#ff7f50";
+	}
 	const arr = [];
 	for (let i = 0; i < arrayLength; i++) arr.push(randomVals(20, 400));
-	return arr;
 };
