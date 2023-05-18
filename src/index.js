@@ -1,22 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
-import { ArrayProvider } from "./contexts/ArrayContext";
-import { SpeedProvider } from "./contexts/SpeedContext";
-import { AlgorithmProvider } from "./contexts/AlgorithmContext";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<ArrayProvider>
-			<SpeedProvider>
-				<AlgorithmProvider>
-					<App />
-				</AlgorithmProvider>
-			</SpeedProvider>
-		</ArrayProvider>
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</React.StrictMode>
 );
 

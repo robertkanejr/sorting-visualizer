@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useArray } from "../contexts/ArrayContext";
-import "../styles/visualizer.css";
+import { useSelector, useDispatch } from "react-redux";
+import { randomizeArray } from "./arraySlice";
+import "../../styles/array.css";
 
-const Visualizer = () => {
-	const { array, setArray, randomizeArray } = useArray();
-
+const Array = () => {
 	useEffect(() => {
 		randomizeArray();
 	}, []);
+
+	const array = useSelector((state) => state.array.randomArr);
 
 	return (
 		<div className="sortingBars">
@@ -19,4 +20,4 @@ const Visualizer = () => {
 	);
 };
 
-export default Visualizer;
+export default Array;
